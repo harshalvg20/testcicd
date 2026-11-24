@@ -32,10 +32,16 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
-
+          python -m pip install pytest
+          python -m pip show pytest
+          
       - name: Run expense calculator
         run: python expense_calculator.py
+
+      - name: Confirm Python execution
+        run: |
+          echo "Python script executed successfully!"
+          python --version
 
       - name: Run automated tests
         run: python -m pytest -v
