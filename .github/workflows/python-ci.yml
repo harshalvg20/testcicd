@@ -46,6 +46,7 @@ jobs:
       - name: Run automated tests
         run: python -m pytest -v
 
+
       - name: Generate GitHub App token
         id: generate-token
         uses: actions/create-github-app-token@v3
@@ -56,5 +57,5 @@ jobs:
       - name: Test GitHub App authentication
         env:
           GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-        run: python github_app_test.py
+        run: python github_app_check.py
 
